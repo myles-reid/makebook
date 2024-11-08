@@ -178,12 +178,23 @@ label:hover {
   background-color: #c73f12;
 }
 
+#post:disabled {
+  background-color: #b5391049; 
+  cursor: not-allowed;
+}
+
+#post:disabled:hover {
+  background-color: #b5391049; 
+}
+
 .posted-posts {
   grid-column: 2;
   height: auto;
 }
 
 .post {
+  display: flex;
+  flex-direction: column;
   margin: 20px 0;
   height: auto;
   width: 100%;
@@ -228,6 +239,8 @@ label:hover {
 }
 
 .posted-image {
+  display: flex;
+  justify-content: center;
   padding: 0 15px 15px 15px;
 }
 

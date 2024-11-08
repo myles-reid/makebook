@@ -24,7 +24,7 @@ function addFirstChild(element, child) {
   return element.prepend(child);
 }
 
-function addAfterChild(element, child, elementChild) {
+function addBefore(element, child, elementChild) {
   return element.insertBefore(child, elementChild);
 }
 
@@ -43,7 +43,9 @@ function toggleClass(element, text) {
 const userIcon = select('.user-icon');
 const textInput = select('.text-box');
 const fileUpload = select('#file');
+const fileName = select('.file-name');
 const postBtn = select('#post');
+const posted = select('.posted-posts');
 const modal = select('.pop-up');
 const modalName = select('.name');
 const modalUserName = select('.user-name');
@@ -117,6 +119,49 @@ const user = new Subscriber(
   false
 );
 
+function getDate() {
+  const options = { year: 'numeric', month: 'short', day: '2-digit' };
+  return new Date().toLocaleDateString('en-ca', options);
+}
+
+
+function buildPost() {
+  const post = create('div');
+  const framework = 
+  `<div class="head">
+    <div class="user">
+      <figure><img class="profile-pic" src="./assets/img/profile-pic.jpg"></figure>
+      <h3 class="post-user-name">${user.name}</h3>
+    </div>
+    <div>
+      <p class="date">${getDate()}</p>
+    </div>
+  </div>
+  <div class="content">
+  </div>`;
+post.innerHTML = framework;
+addClass(post, 'post');
+addFirstChild(posted, post);
+}
+
+function addImage() {
+  const content = select('.content');
+  const image = `<img src="${getImgData()}">`;
+  const figure = create('figure');
+  addClass(figure, 'posted-image')
+  figure.innerHTML = image;
+  addChild(content, figure);
+}
+
+function addText() {
+  const content = select('.content');
+  const text = textInput.value;
+  const para = create('p');
+  addClass(para, 'text');
+  para.innerText = text;
+  addChild(content, para);
+}
+
 function fillInfo() {
   let info = user.getInfo();
   modalName.innerText = `${info[0]}`;
@@ -126,7 +171,41 @@ function fillInfo() {
   modalGroups.innerText = `${info[4]}`;
 }
 
-console.log(user.getInfo()[1]);
+function getImgData() {
+  const file = fileUpload.files[0];
+  const url = URL.createObjectURL(file);
+  return url;
+}
+
+function clearInputs() {
+  if (textInput.value !== '') { textInput.value = ''};
+  if (fileUpload.files.length > 0) { fileName.innerText = ''; }
+}
+
+
+// listen('input', textInput, () => {
+//   (textInput.value !== '') ? postBtn.disabled = false : postBtn.disabled = true;
+// })
+
+listen('change', fileUpload, () => {
+  fileName.innerText = fileUpload.files[0].name;
+});
+
+listen('click', postBtn, () => {
+  buildPost();
+
+  if (textInput.value !== '') {
+    addText();
+  }
+
+  if (fileUpload.files.length > 0) {
+    getImgData();
+    addImage();
+  }
+
+  clearInputs();
+
+});
 
 listen('click', userIcon, () => {
   fillInfo();
