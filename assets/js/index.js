@@ -183,12 +183,14 @@ function clearInputs() {
 }
 
 
-// listen('input', textInput, () => {
-//   (textInput.value !== '') ? postBtn.disabled = false : postBtn.disabled = true;
-// })
+listen('input', textInput, () => {
+  (textInput.value !== '') ? postBtn.disabled = false : postBtn.disabled = true;
+})
+
 
 listen('change', fileUpload, () => {
   fileName.innerText = fileUpload.files[0].name;
+  (fileUpload.files.length !== 0) ? postBtn.disabled = false : postBtn.disabled = true;
 });
 
 listen('click', postBtn, () => {
@@ -204,6 +206,7 @@ listen('click', postBtn, () => {
   }
 
   clearInputs();
+  postBtn.disabled = true;
 
 });
 
