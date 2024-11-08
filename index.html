@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <meta name="author" content="Myles Reid">
+    <meta name="description" content="Page elements">
+    <meta name="keywords" content="html, CSS, web, seo, web development">
+    <title>Makebook</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css">
+    <link rel="stylesheet" media="all" href="./assets/css/style.css">
+    <script src="./assets/js/index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="container flex flex-between">
+        <div class="title">
+          <h1>Makebook</h1>
+        </div>
+        <div class="nav">
+          <nav>
+            <ul class="flex flex-between">
+              <li><a class="easeinout" href="#">Friends</a></li>
+              <li><a class="easeinout" href="#">Pages</a></li>
+              <li><a class="easeinout" href="#">Groups</a></li>
+              <li><a class="easeinout" href="#">Settings</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="user-icon">
+          <figure>
+            <img src="./assets/img/profile-pic.jpg">
+          </figure>
+        </div>
+      </div> 
+    </header>
+
+    <main>
+      <div class="posting-box">
+        <textarea class="text-box" placeholder="What's on your mind?"></textarea>
+        <div class="input-buttons">
+          <label for="file">
+            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            <span id="file-name"></span>
+          </label>
+          <input id="file" class="file-input" type="file" accept="image/*">
+          <div class="post-button">
+            <button id="post">Post</button>
+          </div>
+        </div>
+      </div>
+
+      <section class="posted-posts">
+
+        <div class="post">
+          <div class="head">
+            <figure><img class="profile-pic"></figure>
+            <h3 class="user-name"></h3>
+            <div>
+              <p class="date"></p>
+            </div>
+          </div>
+          <div class="content">
+            <p class="text"></p>
+            <figure class="posted-image"><img></figure>
+          </div>
+        </div>
+
+        <div class="post">
+          <div class="head">
+            <figure><img class="profile-pic"></figure>
+            <h3 class="user-name"></h3>
+            <div>
+              <p class="date"></p>
+            </div>
+          </div>
+          <div class="content">
+            <p class="text"></p>
+            <figure class="posted-image"><img></figure>
+          </div>
+        </div>
+
+        <div class="post">
+          <div class="head">
+            <figure><img class="profile-pic"></figure>
+            <h3 class="user-name"></h3>
+            <div>
+              <p class="date"></p>
+            </div>
+          </div>
+          <div class="content">
+            <p class="text"></p>
+            <figure class="posted-image"><img></figure>
+          </div>
+        </div>
+
+      </section>
+      
+      <div class="pop-up">
+        <figure class="picture"><img></figure>
+        <h2 class="name"></h2>
+        <h3 class="user-name"></h3>
+        <h4 class="email"></h4>
+        <p class="groups"></p>
+        <p class ="pages"></p>
+        <p class="moneitization"></p>
+      </div>
+
+    </main>
+  </body>
+</html>
