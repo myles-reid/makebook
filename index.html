@@ -18,7 +18,7 @@
   </head>
   <body>
     <header>
-      <div class="container flex flex-between">
+      <div class="container wrapper">
         <div class="title">
           <h1>Makebook</h1>
         </div>
@@ -40,14 +40,16 @@
       </div> 
     </header>
 
-    <main>
+    <main class="container">
       <div class="posting-box">
         <textarea class="text-box" placeholder="What's on your mind?"></textarea>
         <div class="input-buttons">
-          <label for="file">
-            <i class="fa-solid fa-arrow-up-from-bracket"></i>
-            <span id="file-name"></span>
-          </label>
+          <div class="label">
+            <label for="file">
+              <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            </label>
+            <p class="file-name"></p>
+          </div>
           <input id="file" class="file-input" type="file" accept="image/*">
           <div class="post-button">
             <button id="post">Post</button>
@@ -59,58 +61,68 @@
 
         <div class="post">
           <div class="head">
-            <figure><img class="profile-pic"></figure>
-            <h3 class="user-name"></h3>
+            <div class="user">
+              <figure><img class="profile-pic" src="./assets/img/profile-pic.jpg"></figure>
+              <h3 class="user-name">Myles Reid</h3>
+            </div>
             <div>
-              <p class="date"></p>
+              <p class="date">Nov 18, 2019</p>
             </div>
           </div>
           <div class="content">
-            <p class="text"></p>
-            <figure class="posted-image"><img></figure>
+            <p class="text">Insert text here</p>
+            <figure class="posted-image"><img src="./assets/img/profile-pic.jpg"></figure>
           </div>
         </div>
 
         <div class="post">
           <div class="head">
-            <figure><img class="profile-pic"></figure>
-            <h3 class="user-name"></h3>
+            <div class="user">
+              <figure><img class="profile-pic" src="./assets/img/profile-pic.jpg"></figure>
+              <h3 class="user-name">Myles Reid</h3>
+            </div>
             <div>
-              <p class="date"></p>
+              <p class="date">Nov 18, 2019</p>
             </div>
           </div>
           <div class="content">
-            <p class="text"></p>
-            <figure class="posted-image"><img></figure>
+            <p class="text">Insert text here</p>
+            <!-- <figure class="posted-image"><img src="./assets/img/profile-pic.jpg"></figure> -->
           </div>
         </div>
 
         <div class="post">
           <div class="head">
-            <figure><img class="profile-pic"></figure>
-            <h3 class="user-name"></h3>
+            <div class="user">
+              <figure><img class="profile-pic" src="./assets/img/profile-pic.jpg"></figure>
+              <h3 class="user-name">Myles Reid</h3>
+            </div>
             <div>
-              <p class="date"></p>
+              <p class="date">Nov 18, 2019</p>
             </div>
           </div>
           <div class="content">
-            <p class="text"></p>
-            <figure class="posted-image"><img></figure>
+            <p class="text">Insert text here</p>
+            <figure class="posted-image"><img src="./assets/img/profile-pic.jpg"></figure>
           </div>
         </div>
 
       </section>
       
-      <div class="pop-up">
-        <figure class="picture"><img></figure>
-        <h2 class="name"></h2>
-        <h3 class="user-name"></h3>
-        <h4 class="email"></h4>
-        <p class="groups"></p>
-        <p class ="pages"></p>
-        <p class="moneitization"></p>
-      </div>
-
+      
     </main>
+
+    <div class="pop-up">
+      <figure class="picture"><img src="./assets/img/profile-pic.jpg"></figure>
+      <div class="user-info">
+        <h2 class="name">Myles Reid</h2>
+        <h3 class="user-name">@myles_reid</h3>
+        <h4 class="email">myles@reidsmailbox.com</h4>
+      </div>
+      <p class="groups">List, all, groups, here</p>
+      <p class ="pages">Add, some, pages, here</p>
+      <p class="moneitization">You can't monetize</p>
+    </div>
+
   </body>
 </html>

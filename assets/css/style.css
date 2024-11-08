@@ -7,11 +7,11 @@ html {
 }
 
 body {
-  background-color: var(--app-color-dark-bg);
+  background-color: #12141c;
 }
 
 header {
-  background-color: #670067;
+  background-color:#b539103b;
   height: 50px;
   
 
@@ -19,16 +19,35 @@ header {
     line-height: 50px;
     color: #fff;
   }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+  }
   
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: flex-start;
+    grid-row: 1;
+    cursor: pointer;
+  }
+
   h1 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-right: 18px;
   }
 
+  .nav {
+    place-self: center;
+    grid-row: 1;
+    width: 75%;
+  }
 
   ul {
-    width: 25rem;
     gap: 5px;
   
     li {
@@ -36,13 +55,13 @@ header {
       font-weight: 400;
     
       a {
-        padding: 3px 9px 5px 9px;
+        padding: 8px 10px;
         border-radius: 4px;
         color: #fff;
       }   
 
       a:hover {
-        background-color: #a200a2;
+        background-color: #b53910c0;
       }
     }
   }
@@ -51,6 +70,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-self: flex-end;
+    grid-row: 1;
     height: 50px;
     width: 50px;
   }
@@ -58,6 +79,196 @@ header {
   .user-icon figure {
     height: 30px;
     width: 30px;
-    clip-path: circle(50% at 50% 50%)
+    clip-path: circle(50% at 50% 50%);
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
   }
+
+  .user-icon figure:hover {
+    transform: scale(1.1);
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.posting-box {
+  margin-top: 20px;
+  grid-column: 2;
+  place-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 175px;
+  border-radius: 6px;
+  background-color: #1a1d28
+}
+
+.input-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 30px;
+  margin-bottom: 18px;
+}
+
+input[type=file] {
+  opacity: 0;
+  width: 10px;
+}
+
+.label {
+  display: flex;
+}
+
+label {
+  color: #ebebeb;
+  width: auto;
+  cursor: pointer;
+  padding-top: 2px;
+  transition: all 0.25s ease-in-out;
+}
+
+label:hover {
+  transform: scale(1.1);
+}
+
+.file-name {
+  color: #ebebeb;
+  line-height: 30px;
+  margin-left: 15px;
+}
+
+
+
+.text-box{
+  font-size: 24px;
+  width: 100%;
+  height: 125px;
+  resize: none;
+  color: #ebebeb;
+  background-color: #1a1d28;
+  padding: 15px 15px;
+  border-radius: 6px 6px 0 0;
+}
+
+.text-box::-webkit-scrollbar {
+  background-color: #1a1d28;
+}
+
+.text-box::-webkit-scrollbar-thumb {
+  background-color: #31374c;
+  border-radius: 25px;
+}
+
+
+#post {
+  padding: 2px 15px;
+  border-radius: 6px;
+  color: #ebebeb;
+  background-color: #b53910;
+  transition: all 0.25s ease-in-out;
+}
+
+#post:hover {
+  background-color: #c73f12;
+}
+
+.posted-posts {
+  grid-column: 2;
+  height: auto;
+}
+
+.post {
+  margin: 20px 0;
+  height: auto;
+  width: 100%;
+  border-radius: 6px;
+  background-color: #ebebeb;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.user {
+  display: flex;
+  padding-left: 10px;
+}
+
+.profile-pic {
+  height: 30px;
+  width: 30px;
+  clip-path: circle(50% at 50% 50%);
+  margin-right: 10px;
+}
+
+.user-name {
+  line-height: 30px;
+  font-size: 16px;
+  font-weight: 00;
+}
+
+.date {
+  font-size: 14px;
+  font-weight: 400;
+  margin-right: 10px;
+}
+
+.text {
+  margin-left: 15px;
+  height: 40px;
+}
+
+.posted-image {
+  padding: 0 15px 15px 15px;
+}
+
+.pop-up {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  inset: 0;
+  margin: auto;
+  height: 500px;
+  width: 300px;
+  background-color: #ebebeb;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.219);
+  visibility: hidden;
+}
+
+.picture {
+  height: 150px;
+  width: 150px;
+  clip-path: circle(50% at 50% 50%);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.user-name {
+  font-size: 22px;
+  font-weight: 500;
+}
+.email {
+  font-size: 18px;
+  font-weight: 300;
 }
