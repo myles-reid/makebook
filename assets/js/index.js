@@ -40,7 +40,7 @@ function toggleClass(element, text) {
   return element.classList.toggle(text);
 }
 
-const userIcon = select('.user-icon');
+const userIcon = select('#user-icon');
 const textInput = select('.text-box');
 const fileUpload = select('#file');
 const fileName = select('.file-name');
@@ -209,6 +209,7 @@ listen('click', postBtn, () => {
   postBtn.disabled = true;
 
 });
+
 
 listen('click', userIcon, () => {
   fillInfo();
