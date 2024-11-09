@@ -23,9 +23,9 @@ The couple of things that I learned was really how grid works properly. I manage
 
 ## Screenshots
 
-![App Screenshot](./assets/img/screenshot-01.png)
-![App Screenshot](./assets/img/screenshot-02.png)
-![App Screenshot](./assets/img/screenshot-03.png)
+![App Screenshot](./assets/img/Screenshot-01.png)
+![App Screenshot](./assets/img/Screenshot-02.png)
+![App Screenshot](./assets/img/Screenshot-03.png)
 
 
 ---
